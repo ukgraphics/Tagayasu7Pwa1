@@ -18,20 +18,20 @@
     <tbody>
         @foreach (var item in Model.EventList)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.place)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.event_url)
-                </td>
-                <td>
-                    <a asp-page="./EventDetail" asp-route-id="@item.event_id">概要</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <p>@item.title</p>
+            </td>
+            <td>
+                <p>@item.place</p>
+            </td>
+            <td>
+                <a href="@item.event_url" target="_blank">@item.event_url</a>
+            </td>
+            <td>
+                <a asp-page="./EventDetail" asp-route-id="@item.event_id">概要</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
